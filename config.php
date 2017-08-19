@@ -14,5 +14,5 @@ return [
     'objects' =>[
         'filestorage'
     ],
-    'post-install'=>false
+    'post-install'=>'Dvelum_Backend_Articles_Installer'
 ];
