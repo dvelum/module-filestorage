@@ -1,0 +1,25 @@
+{
+  "name": "dvelum/module-filestorage",
+  "version": "1.0.0",
+  "type": "dvelum-module",
+  "description": "File storage module for DVelum",
+  "keywords": ["dvelum","filestorage"],
+  "homepage": "https://github.com/dvelum/module-filestorage",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Kirill Yegorov",
+      "email": "kirill@dvelum.com",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/dvelum/module-filestorage/issues",
+    "source": "https://github.com/dvelum/module-filestorage"
+  },
+  "require": {
+    "php":">=7.1",
+    "oomphinc/composer-installers-extender": "^1.1",
+    "dvelum/dvelum": ">=2.0.0"
+  }
+}

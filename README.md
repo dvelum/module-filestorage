@@ -1,2 +1,2 @@
 # module-filestorage
-Filestorage module
+File storage module for DVelum 2.0
