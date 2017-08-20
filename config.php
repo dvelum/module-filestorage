@@ -2,7 +2,7 @@
 return [
     'id' => 'dvelum_filestorage',
     'version' => '1.0.0',
-    'author' => 'Kirill Egorov',
+    'author' => 'Kirill Yegorov',
     'name' => 'DVelum File Storage',
     'configs' => './configs',
     'locales' => './locales',
