@@ -1,7 +1,7 @@
 <?php return [
-    'dvelum_filestorage' =>[
+    'dvelum-module-filestorage' =>[
         'enabled' => false,
         'installed' => false,
-        'path' => './modules/DVelum/FileStorage',
+        'path' => './modules/dvelum/module-filestorage',
     ]
 ];

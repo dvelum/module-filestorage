@@ -1,6 +1,6 @@
 <?php
 return [
-    'id' => 'dvelum_filestorage',
+    'id' => 'dvelum-module-filestorage',
     'version' => '1.0.0',
     'author' => 'Kirill Yegorov',
     'name' => 'DVelum File Storage',
@@ -14,5 +14,5 @@ return [
     'objects' =>[
         'filestorage'
     ],
-    'post-install'=>'Dvelum_Backend_Articles_Installer'
+    'post-install'=>'\\Dvelum\\FileStorage\\Installer'
 ];
