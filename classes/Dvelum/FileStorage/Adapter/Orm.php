@@ -22,7 +22,7 @@ namespace Dvelum\FileStorage\Adapter;
 
 use Dvelum\Config\ConfigInterface;
 use Dvelum\Orm\{
-    Model, Object, Object\Config
+    Model, Record, Record\Config
 };
 
 /**
@@ -91,7 +91,7 @@ class Orm extends Simple
 
         foreach ($data as $k => &$v) {
             try {
-                $o = Object::factory($this->object);
+                $o = Record::factory($this->object);
                 $o->setValues([
                     'path' => $v['path'],
                     'date' => date('Y-m-d H:i:s'),
@@ -131,12 +131,12 @@ class Orm extends Simple
      */
     public function remove($fileId): bool
     {
-        if (!Object::objectExists($this->object, $fileId)) {
+        if (!Record::objectExists($this->object, $fileId)) {
             return true;
         }
 
         try {
-            $o = Object::factory($this->object, $fileId);
+            $o = Record::factory($this->object, $fileId);
         } catch (\Exception $e) {
             return false;
         }

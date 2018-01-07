@@ -118,7 +118,7 @@ class Controller extends Api\Controller
         }
 
         try{
-            $file = Orm\Object::factory('Filestorage' , $fileId);
+            $file = Orm\Record::factory('Filestorage' , $fileId);
         }catch (\Exception $e){
             $this->response->redirect('/');
         }
@@ -194,7 +194,7 @@ class Controller extends Api\Controller
             $this->response->error($this->lang->get('WRONG_REQUEST'));
 
         try{
-            $object = Orm\Object::factory($this->objectName , $id);
+            $object = Orm\Record::factory($this->objectName , $id);
         }catch(\Exception $e){
             $this->response->error($this->lang->get('WRONG_REQUEST'));
         }
