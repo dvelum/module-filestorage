@@ -18,6 +18,7 @@
  */
 
 namespace Dvelum\App\Backend\FileStorage;
+use Dvelum\Utils;
 /**
  * File storage UI controller
  */
@@ -79,7 +80,7 @@ class Controller extends Api\Controller
             return;
         }
 
-        $userIds = \Utils::fetchCol('user_id' , $data);
+        $userIds = Utils::fetchCol('user_id' , $data);
         $userData = [];
 
         if(empty($userIds)){
@@ -93,7 +94,7 @@ class Controller extends Api\Controller
             ->fetchAll();
 
         if(!empty($userData)){
-            $userData = \Utils::rekey('id' , $userData);
+            $userData = Utils::rekey('id' , $userData);
         }
 
         foreach($data as $k=>&$v)
@@ -158,7 +159,9 @@ class Controller extends Api\Controller
      */
     public function uploadAction()
     {
-        $this->checkCanEdit();
+        if(!$this->checkCanEdit()){
+            return;
+        }
 
         $files = $this->request->files();
 
@@ -187,7 +190,10 @@ class Controller extends Api\Controller
      */
     public function deleteAction()
     {
-        $this->checkCanDelete();
+        if(!$this->checkCanDelete()){
+            return;
+        }
+
         $id = $this->request->post('id' , 'integer' , false);
 
         if(!$id)
@@ -210,6 +216,6 @@ class Controller extends Api\Controller
             $this->response->error($this->lang->get('CANT_EXEC'));
         }
 
-        Response::jsonSuccess();
+        $this->response->success();
     }
 }
