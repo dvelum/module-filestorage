@@ -10,7 +10,7 @@
   'locked' => false,
   'primary_key' => 'id',
   'use_db_prefix' => true,
-  'system' => true,
+  'system' => false,
   'fields' =>
   array (
     'path' =>
