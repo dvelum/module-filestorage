@@ -1,7 +1,7 @@
 <?php
 return [
     'id' => 'dvelum-module-filestorage',
-    'version' => '1.0.1',
+    'version' => '1.0.2',
     'author' => 'Kirill Yegorov',
     'name' => 'DVelum File Storage',
     'configs' => './configs',

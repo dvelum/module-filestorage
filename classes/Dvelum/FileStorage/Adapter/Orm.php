@@ -162,7 +162,7 @@ class Orm extends Simple
             return false;
         }
         try {
-            $o = Object::factory($this->object);
+            $o = Record::factory($this->object);
             $o->setValues([
                 'path' => $data['path'],
                 'date' => date('Y-m-d H:i:s'),
@@ -182,5 +182,19 @@ class Orm extends Simple
             Model::factory($this->object)->logError(get_class($this) . ' ' . $e->getMessage());
         }
         return $data;
+    }
+
+    /**
+     * Get file Path
+     * @param $fileId
+     * @return string
+     */
+    public function getFilePath($fileId): ?string
+    {
+        $item = Model::factory($this->object)->getItem($fileId);
+        if(!empty($item) && file_exists($this->getPath() . $item['path'])){
+            return $this->getPath() . $item['path'];
+        }
+        return null;
     }
 }

@@ -177,4 +177,17 @@ class Simple extends AbstractAdapter
 
         return $uploaded;
     }
+
+    /**
+     * Get file Path
+     * @param $fileId
+     * @return null|string
+     */
+    public function getFilePath($fileId): ?string
+    {
+        if(file_exists($this->getPath() . $fileId)){
+            return $this->getPath() . $fileId;
+        }
+        return null;
+    }
 }

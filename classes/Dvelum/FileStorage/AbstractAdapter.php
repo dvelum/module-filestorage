@@ -102,4 +102,12 @@ abstract class AbstractAdapter
     {
         return $this->config->get('filepath');
     }
+
+    /**
+     * Get file Path
+     * @param $fileId
+     * @return null|string
+     */
+    abstract public function getFilePath($fileId): ?string;
+
 }
