@@ -22,7 +22,7 @@
           'altFormats' => 'Y-m-d',
           'format' => 'd.m.Y',
           'submitFormat' => 'Y-m-d',
-          'width' => 90.0,
+          'width' => 110.0,
         ),
       ),
     ),

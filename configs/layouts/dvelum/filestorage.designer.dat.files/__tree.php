@@ -1,17 +1,17 @@
 <?php return array (
-  '_Layout_' => 
-  array (
-    'id' => '_Layout_',
-    'parent' => false,
-    'data' => '_Layout_.config.php',
-    'order' => 1,
-  ),
   '_Component_' => 
   array (
     'id' => '_Component_',
     'parent' => false,
     'data' => '_Component_.config.php',
     'order' => 0,
+  ),
+  '_Layout_' => 
+  array (
+    'id' => '_Layout_',
+    'parent' => false,
+    'data' => '_Layout_.config.php',
+    'order' => 1,
   ),
   'dataGrid' => 
   array (
@@ -90,12 +90,12 @@
     'data' => 'fileUploadWindow_bottom_toolbar.config.php',
     'order' => 0,
   ),
-  'fileUploadWindow_footer_cancelBtn' => 
+  'fileUploadWindow_footer_fill' => 
   array (
-    'id' => 'fileUploadWindow_footer_cancelBtn',
+    'id' => 'fileUploadWindow_footer_fill',
     'parent' => 'fileUploadWindow_bottom_toolbar',
-    'data' => 'fileUploadWindow_footer_cancelBtn.config.php',
-    'order' => 2,
+    'data' => 'fileUploadWindow_footer_fill.config.php',
+    'order' => 0,
   ),
   'fileUploadWindow_footer_saveBtn' => 
   array (
@@ -104,12 +104,12 @@
     'data' => 'fileUploadWindow_footer_saveBtn.config.php',
     'order' => 1,
   ),
-  'fileUploadWindow_footer_fill' => 
+  'fileUploadWindow_footer_cancelBtn' => 
   array (
-    'id' => 'fileUploadWindow_footer_fill',
+    'id' => 'fileUploadWindow_footer_cancelBtn',
     'parent' => 'fileUploadWindow_bottom_toolbar',
-    'data' => 'fileUploadWindow_footer_fill.config.php',
-    'order' => 0,
+    'data' => 'fileUploadWindow_footer_cancelBtn.config.php',
+    'order' => 2,
   ),
   'fileUploadWindow_file' => 
   array (

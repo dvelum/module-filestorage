@@ -61,7 +61,7 @@ class Controller extends Api\Controller
             $date = $apiRequest->getFilter('date');
             if(!empty($date)){
                 $date = date('Y-m-d', strtotime($date));
-                $dateFilter = new Select\Filter('date' , array($date.' 00:00:00', $date.' 23:59:59') , \Db_Select_Filter::BETWEEN);
+                $dateFilter = new Select\Filter('date' , array($date.' 00:00:00', $date.' 23:59:59') , Select\Filter::BETWEEN);
                 $apiRequest->addFilter('date', $dateFilter);
 
             }else{

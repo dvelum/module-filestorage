@@ -1,10 +1,11 @@
 <?php return array (
   'click' => 
   array (
-    'object' => 'dateFilterReset',
+    'object' => 'uploadButton',
     'event' => 'click',
-    'code' => 'dateFilterReset.events.click.js',
+    'code' => 'uploadButton.events.click.js',
     'params' => false,
     'is_local' => false,
+    'buffer' => false,
   ),
 ); 

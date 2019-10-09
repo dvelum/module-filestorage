@@ -1,24 +1,26 @@
 <?php
 namespace Dvelum\FileStorage;
 
+use Dvelum\App\Model\Permissions;
 use Dvelum\Config\ConfigInterface;
 use Dvelum\App\Session\User;
 use Dvelum\Orm\Model;
 
-class Installer extends \Externals_Installer
+class Installer extends \Dvelum\Externals\Installer
 {
     /**
      * Install
      * @param ConfigInterface $applicationConfig
      * @param ConfigInterface $moduleConfig
-     * @return boolean
+     * @return bool
+     * @throws \Exception
      */
-    public function install(ConfigInterface $applicationConfig, ConfigInterface $moduleConfig)
+    public function install(ConfigInterface $applicationConfig, ConfigInterface $moduleConfig) : bool
     {
         // Add permissions
-        $userInfo = User::getInstance()->getInfo();
+        $userInfo = User::factory()->getInfo();
         /**
-         * @var \Model_Permissions $permissionsModel
+         * @var Permissions $permissionsModel
          */
         $permissionsModel = Model::factory('Permissions');
         if (!$permissionsModel->setGroupPermissions($userInfo['group_id'], 'Filestorage', 1, 1, 1, 1)) {
@@ -31,7 +33,7 @@ class Installer extends \Externals_Installer
      * Uninstall
      * @param ConfigInterface $applicationConfig
      * @param ConfigInterface $moduleConfig
-     * @return boolean
+     * @return bool
      */
     public function uninstall(ConfigInterface $applicationConfig, ConfigInterface $moduleConfig)
     {

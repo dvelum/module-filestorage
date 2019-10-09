@@ -8,7 +8,7 @@ return array(
         'user_id' => 0, //default user ID
         'upload_prefix' => '',
         'rename' => true,
-        'uploader' => 'Upload',
+        'uploader' => '\\Dvelum\\App\\Upload\\Uploader',
         'mkdir_mode' => 0755,
         'uploader_config' => array(
             'file' => array(
@@ -46,7 +46,7 @@ return array(
         'user_id' => 0, //default user ID
         'upload_prefix' => '',
         'rename' => true,
-        'uploader' => 'Upload',
+        'uploader' => '\\Dvelum\\App\\Upload\\Uploader',
         'mkdir_mode' => 0755,
         'uploader_config' => array(
             'file' => array(

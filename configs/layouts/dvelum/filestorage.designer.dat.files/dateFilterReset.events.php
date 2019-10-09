@@ -1,10 +1,11 @@
 <?php return array (
   'click' => 
   array (
-    'object' => 'fileUploadWindow_footer_cancelBtn',
+    'object' => 'dateFilterReset',
     'event' => 'click',
-    'code' => 'fileUploadWindow_footer_cancelBtn.events.click.js',
+    'code' => 'dateFilterReset.events.click.js',
     'params' => false,
     'is_local' => false,
+    'buffer' => false,
   ),
 ); 
