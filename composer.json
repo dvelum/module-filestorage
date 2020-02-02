@@ -1,7 +1,7 @@
 {
   "name": "dvelum/module-filestorage",
-  "version": "3.0.0-dev",
-  "type": "dvelum-module",
+  "version": "3.0.0",
+  "type": "dvelum3-module",
   "description": "File storage module for DVelum",
   "keywords": ["dvelum","filestorage"],
   "homepage": "https://github.com/dvelum/module-filestorage",

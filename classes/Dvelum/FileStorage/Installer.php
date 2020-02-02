@@ -35,8 +35,8 @@ class Installer extends \Dvelum\Externals\Installer
      * @param ConfigInterface $moduleConfig
      * @return bool
      */
-    public function uninstall(ConfigInterface $applicationConfig, ConfigInterface $moduleConfig)
+    public function uninstall(ConfigInterface $applicationConfig, ConfigInterface $moduleConfig) : bool
     {
-
+        return true;
     }
 }

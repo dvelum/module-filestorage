@@ -99,7 +99,7 @@
         'id' => 'size',
         'parent' => 0,
         'class' => 'Ext_Grid_Column',
-        'name' => NULL,
+        'name' => 'size',
         'extClass' => 'Grid_Column',
         'order' => 3,
         'state' => 
@@ -137,7 +137,7 @@
         'id' => 'action',
         'parent' => 0,
         'class' => 'Ext_Grid_Column_Action',
-        'name' => NULL,
+        'name' => 'action',
         'extClass' => 'Grid_Column_Action',
         'order' => 5,
         'state' => 

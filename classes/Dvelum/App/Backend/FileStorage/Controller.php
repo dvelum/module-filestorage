@@ -1,7 +1,7 @@
 <?php
 /**
  * DVelum project http://code.google.com/p/dvelum/ , https://github.com/k-samuel/dvelum , http://dvelum.net
- * Copyright (C) 2011-2017  Kirill Yegorov
+ * Copyright (C) 2011-2020  Kirill Yegorov
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -81,7 +81,6 @@ class Controller extends Api\Controller
         }
 
         $userIds = Utils::fetchCol('user_id' , $data);
-        $userData = [];
 
         if(empty($userIds)){
             return;
@@ -122,6 +121,7 @@ class Controller extends Api\Controller
             $file = Orm\Record::factory('Filestorage' , $fileId);
         }catch (\Exception $e){
             $this->response->redirect('/');
+            return;
         }
 
         $storage = Model::factory('Filestorage')->getStorage();
@@ -132,6 +132,7 @@ class Controller extends Api\Controller
         if (!file_exists($storagePath)) {
             $this->response->put($this->lang->get('FILE_NOT_FOUND'));
             $this->response->send();
+            return;
         }
 
         header('Content-Description: File Transfer');
@@ -167,6 +168,7 @@ class Controller extends Api\Controller
 
         if (!isset($files['file']) || empty($files['file'])){
             $this->response->error($this->lang->get('FILL_FORM'));
+            return;
         }
 
         /**
@@ -178,6 +180,7 @@ class Controller extends Api\Controller
 
         if (empty($files)) {
             $this->response->error($this->lang->get('CANT_EXEC'));
+            return;
         }
 
         $this->response->success();
@@ -196,24 +199,30 @@ class Controller extends Api\Controller
 
         $id = $this->request->post('id' , 'integer' , false);
 
-        if(!$id)
+        if(!$id){
             $this->response->error($this->lang->get('WRONG_REQUEST'));
+            return;
+        }
+
 
         try{
             $object = Orm\Record::factory($this->objectName , $id);
         }catch(\Exception $e){
             $this->response->error($this->lang->get('WRONG_REQUEST'));
+            return;
         }
 
         $acl = $object->getAcl();
         if($acl && !$acl->canDelete($object)){
             $this->response->error($this->lang->get('CANT_DELETE'));
+            return;
         }
 
         $fileStorage = Model::factory('Filestorage')->getStorage();
 
         if(!$fileStorage->remove($id)){
             $this->response->error($this->lang->get('CANT_EXEC'));
+            return;
         }
 
         $this->response->success();
